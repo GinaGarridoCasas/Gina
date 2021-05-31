@@ -9,7 +9,8 @@ app = Flask(__name__)  # __name__ --> __main__
 @app.route("/")  # @ --> esto representa el decorador de la función
 def home():
     """ Default path """
-    return app.send_static_file('greet.html')
+    #return app.send_static_file('greet.html')
+    return "Hola"
 
 @app.route("/greet")
 def greet():
@@ -20,6 +21,7 @@ def greet():
 def create_json():
     return 'Tienes que acceder al endpoint "/give_me_id" pasando por parámetro "password" con la contraseña correcta' 
 
+#http://localhost:6060/?token_id=B6358683
 @app.route('/give_me_id', methods=['GET'])
 def give_id():
     x = request.args['password']
@@ -50,7 +52,7 @@ def main():
         DEBUG = json_readed["debug"]
         HOST = json_readed["host"]
         PORT_NUM = json_readed["port"]
-        app.run(debug=DEBUG, host=HOST, port=PORT_NUM)
+        app.run(debug=DEBUG, host=HOST, port=6060)
     else:
         print("Server settings.json doesn't allow to start server. " + 
             "Please, allow it to run it.")
