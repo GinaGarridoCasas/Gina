@@ -3,10 +3,27 @@
 
 import pandas as pd
 
-def leer_fichero (df):
-    TICS_2017 = pd.read_csv(df, sep =';')
+
+def transponer_filas (df, col_a, col_b):
+    comunidades_autonomas = df["col_a"].unique()
+    comunidades_autonomas_ordenada = sorted(list(comunidades_autonomas)) 
+    comunidades_autonomas_ordenada.insert(0, comunidades_autonomas_ordenada[-1])
+    comunidades_autonomas_ordenada.pop()
+
+    tipo_conex = df["col_b"].unique()
+    diccionario_final = {}
+    for conex in tipo_conex:
+        diccionario_final[conex] = []
+    for row in df.iterrows():
+        comunidad = row[1][0]
+        tipo_conex = row[1][1]
+        valor = row[1][2]
+        diccionario_final[tipo_conex].append(valor)
+
+    TICS_2017 = pd.DataFrame(diccionario_final, index=comunidades_autonomas_ordenada)
 
     return TICS_2017
+
 
 def borra_columna_index(dataframe):
     del dataframe["index"]
@@ -17,6 +34,12 @@ def De_string_numérica (df, col_a, col_b, col_c, col_d, col_e):
     TICS_2017[['col_a', 'col_b','col_c', 'col_d', 'col_e']]= df[['col_a', 'col_b','col_c', 'col_d', 'col_e']].astype(float)
 
     return TICS_2017
+
+def eliminar_punto (df, col):
+    df['col'] = df['col'].apply(lambda x: x.split('.')).apply(''.join)
+
+    return df
+
 
 def ordenar_índice (df):
     TICS_2017 = df.sort_index()
