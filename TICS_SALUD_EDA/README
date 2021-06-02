@@ -1,0 +1,92 @@
+link al proyecto en github
+https://github.com/GinaGarridoCasas/Gina/tree/main/TICS_SALUD_EDA
+
+Título: ¿Son más saludables las CCAA con mayor acceso a TICS?
+
+Objetivos del proyecto
+Conocer la asociacion en España entre el tipo de conexión de banda ancha de TICS en los hogares y salud
+
+Hipótesis
+Las CCAA con mejor conexión a TICS muestran una mejor salud autopercibida, física y mental que aquellas en las que el acceso es más limitado
+
+Operativización de variables
+
+Indicadores y fuente
+
+Tipo de conexión a TICS (Encuesta sobre equipamiento y uso de tecnologías de información y comunicación en los hogares. 2017):
+    - Por ADSL
+    - Por red de cable o fibra óptica
+    - Otras conexiones fijas (vía satélite, wifi público, Wimax)
+    - A través de un dispositivo de mano (teléfono móvil de últimas generaciones -al menos 3G-, iPod,...)
+    - Conexión móvil vía moden USB o tarjeta (en portátiles, p. ej.)
+
+Salud subjetiva: (Encuesta sobre condiciones de vida. 2017) 
+    - Salud autopercibida
+
+Salud objetiva (Encuesta Nacional de Salud. 2017)
+Fisica
+    - Dificultades para concentrarse
+    - Diabetes
+    - Dificultades para ver
+    - Dolor de espalda crónico cervical
+    - Dolor de espalda crónico lumbar
+    - Infarto de miocardio
+    - Restricciones en AVD por dolor
+    - Sobrepeso
+    - Migraña
+Mental
+    - Depresión
+    - Ansiedad
+    - Otros problemas de salud mental
+    - Salud mental media
+
+Variables sociodemográficas (Encuesa de condiciones de vida y Padrón municipal):
+    - Tasa de paro
+    - Índice de masculinidad
+    - Renta media por hogar
+    - Educación superior
+    - Edad de 25 a 59 años
+
+Limpieza de bases de datos:
+- Se unificó la estructura de las diferentes bases
+- Se eliminaron las columnas que no aportaban información relevante al estudio
+- Se renombraron las columnas seleccionadas de cada base de datos
+- Se pasaron de string a numéricos los valores correspondientes a porcentajes
+
+Unificación de bases de datos:
+Se ordenaron por CCAA las diferentes bases de datos
+Una vez ordenadas en base a la columna de CCAA se reseteó el índice de todas ellas
+Se unieron todas las bases de datos por el índice en un dataFrame común
+El dataFrame común se segmentó en tres para facilitar los análisis:
+    - TICS y salud autopercibida
+    - TICS y salud física y mental
+    - TICS y variables de sociodemográficas de control
+
+Control de calidad de las bases:
+Se realizó un análisis para detectar valores missing, duplicados y outliers. No se detectaron missing ni duplicados.
+Se encontraron valores outliers en algunas de las variables. Se decidió no eliminarlos y valorar posibles causas de los valores extremos en las CCAA en las que aparecieran
+
+Análisis de datos:
+- Se halló la matriz de correlación de los tipos de conexión de banda ancha de las TICS y la variable de salud percibida
+- Se obtuvieron las tablas de correlaciones de los tipos de conexión de banda ancha de las TICS y la variable de salud física y mental
+- Se obtuvieron las tablas de correlación de los tipos de conexión de banda ancha de las TICS y las variables sociodemoograficas de control
+
+Conclusiones
+
+- No se confirma la hipótesis en la población española de que las zonas con mejor conexión a TICS presenten una mejor salud física o mental
+ 
+    - Las zonas con conexión a TICS por cable o fibra óptica muestran una mayor asociación con los siguientes problemas de salud: dolor crónico cervical y lumbar, migraña, sobrepeso, depresión, otros problemas de salud mental
+    - Las comunidades autónomas en las que se encuentran un alto porcentaje de hogares con conexión por cable o fibra óptica (por encima de la media nacional) y una mayor presencia de problemas de dolor crónico cervical y lumbar, depresión y otros problemas de salud mental son Galicia y Principado de Asturias
+    - Las comunidades autónomas con alto porcentaje de hogares con conexión por cable o fibra óptica (por encima de la media nacional) y con alto porcentaje de migraña son: Galicia, Principado de Asturias y La Rioja y con alto porcentaje de sobrepeso: Galicia, Región de Murcia y La Rioja
+
+- Variables adicionales no relacionadas con la renta de los hogares, situación laboral, nivel de estudios, sexo, edad entre 25 y 59 años pueden estar incidiendo en la relación entre la conexión a TICS por cable o fibra óptica y las enfermedades con las que este tipo de conexión se encuentra asociada
+- Las habilidades digitales, el tipo de ocupación que se realiza mayoritariamente en las diferentes CCAA, población mayor de 65 años pueden ser variables intermedias en la relación entre la conexión a fibra óptica y enfermedades asociadas
+
+
+Futuros análisis de interés
+
+- Examinar otras variables de control que puedan estar incidiendo en el desarrollo mayor o menor de determinados problemas de salud: tipo de ocupaciones que más se realizan, habilidades digitales, población mayor de 65 años,…
+- Un estudio longitudinal en el que se recojan las variaciones en la cantidad de hogares con acceso a diferentes tipos de conexiones TICS y la variación en medidas de salud a lo largo de tiempo ampliaría el conocimiento sobre la asociación estudiada
+- Un análisis similar a nivel individual en vez de a nivel de CCAA también arrojaría información de interés aunque es claramente más costoso
+
+
