@@ -18,7 +18,7 @@ print(bbdd_path)
 # Crea el menú de la página web con las diferentes opciones que queremos que incluya: Bienvenida, mostrar el data frame, conexión con flask
 
 menu = st.sidebar.selectbox('Menu:',
-            options=["Bienvenidos/as", "Base de datos", "Load Dataframe Columns"])
+            options=["Bienvenidos/as", "Base de datos", "leer json"])
 
 # Damos un título y un texto a la pestaña del menú: Bienvenida
 
@@ -34,6 +34,5 @@ if menu == 'Base de datos':
 # En la tercera pestaña, leemos nuestro fichero de datos en json desde Flask
 
 if menu == 'leer json':
-    features = create_sliders()
     features_df  = pd.read_json("http://localhost:6060/obtener_json?token_id=H13297422")
     st.table(features_df)  

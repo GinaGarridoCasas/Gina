@@ -22,8 +22,8 @@ def home():
 def give_id():
     x = request.args.get('token_id')
     if x == "H13297422":
-        Base_completa_json = read_json("C:\Users\ggarr\OneDrive\Escritorio\Data_Science\The Bridge\Gina\TICS_SALUD_EDA\src\api\static\Base_completa.json")
-        return Base_completa_json
+        Base_completa_json = read_json("C:\\Users\\ggarr\\OneDrive\\Escritorio\\Data_Science\\The Bridge\\Gina\\TICS_SALUD_EDA\\src\\api\\static\\Base_completa.json")
+        return str(Base_completa_json)
     else:
         return "No es la contraseña correcta"
 
@@ -31,9 +31,9 @@ if __name__ == '__main__':
     
     parser = argparse.ArgumentParser()
     parser.add_argument("-x", "--x", type=str, help="Password")
-    arg = parser.recoger_argumentos()
+    arg = vars(parser.parse_args())
     if arg['x'] == "8642":
-            app.run(host='0.0.0.0',port=os.getenv("PORT", 6060), debug=True)
+            app.run(host='127.0.0.1',port=os.getenv("PORT", 6060), debug=True)
     else:
         print('wrong password')
 
