@@ -73,20 +73,19 @@ Análisis de datos:
 
 Conclusiones
 
-- No se confirma la hipótesis en la población española de que las zonas con mejor conexión a TICS presenten una mejor salud física o mental
- 
-    - Las zonas con conexión a TICS por cable o fibra óptica muestran una mayor asociación con los siguientes problemas de salud: dolor crónico cervical y lumbar, migraña, sobrepeso, depresión, otros problemas de salud mental
-    - Las comunidades autónomas en las que se encuentran un alto porcentaje de hogares con conexión por cable o fibra óptica (por encima de la media nacional) y una mayor presencia de problemas de dolor crónico cervical y lumbar, depresión y otros problemas de salud mental son Galicia y Principado de Asturias
-    - Las comunidades autónomas con alto porcentaje de hogares con conexión por cable o fibra óptica (por encima de la media nacional) y con alto porcentaje de migraña son: Galicia, Principado de Asturias y La Rioja y con alto porcentaje de sobrepeso: Galicia, Región de Murcia y La Rioja
-
-- Variables adicionales no relacionadas con la renta de los hogares, situación laboral, nivel de estudios, sexo, edad entre 25 y 59 años pueden estar incidiendo en la relación entre la conexión a TICS por cable o fibra óptica y las enfermedades con las que este tipo de conexión se encuentra asociada
-- Las habilidades digitales, el tipo de ocupación que se realiza mayoritariamente en las diferentes CCAA, población mayor de 65 años pueden ser variables intermedias en la relación entre la conexión a fibra óptica y enfermedades asociadas
+- El tipo de conexión de banda ancha que muestra mayor asociación positiva con "buena salud" percibida (Pearson:.50) es a través de dispositivos de mano (teléfono móvil de últimas generaciones -al menos 3G, Ipod,...). Esta asociación se ve afectada por la edad de la población que hace uso de este tipo de dispositivos (edad entre 25-59 años)
+- Por el contrario la conexión por cable o fibra óptica es la que presenta una mayor asociación negativa con la "buena salud" percibida (Pearson: -.54). Este tipo de conexión se encuentra asociada con la renta media del hogar (Pearson: .63)
+- Se encuentra una muy ligera asociación con algunos problemas de salud física y mental en función del tipo de conexión de banda ancha mayoritariamente utilizado: 
+    - Utilización de dispositivos de mano y "alguna dificultad de concentración" (Pearson: .374). Asociación más marcada en las Comunidades autónomas de: Castilla La Mancha, Castilla y León y Región de Murcia
+    - Conexión por ADSL y "otros problemas de salud mental" (Pearson: .335). Asociación positiva marcada en las Comunidades autónomas: Andalucía, Galicia y Comunidad Foral de Navarra
+    - Conexión por cable o fibra óptica y "Restricción en la actividad de la vida diario por dolor" (Pearson: .352). Esta asociación se percibe fundamentalmente en las Comunidades autónomas: Comunidad de Madrid, Ceuta y País Vasco 
 
 
 Futuros análisis de interés
 
-- Examinar otras variables de control que puedan estar incidiendo en el desarrollo mayor o menor de determinados problemas de salud: tipo de ocupaciones que más se realizan, habilidades digitales, población mayor de 65 años,…
+
+- Examinar otras variables de control que puedan estar incidiendo en el desarrollo mayor o menor de determinados problemas de salud: tipo de ocupaciones que más se realizan, habilidades digitales, población mayor de 65 años, ocupación,…
 - Un estudio longitudinal en el que se recojan las variaciones en la cantidad de hogares con acceso a diferentes tipos de conexiones TICS y la variación en medidas de salud a lo largo de tiempo ampliaría el conocimiento sobre la asociación estudiada
-- Un análisis similar a nivel individual en vez de a nivel de CCAA también arrojaría información de interés aunque es claramente más costoso
+- Un análisis similar a nivel individual en vez de a nivel de CCAA también arrojaría información de interés 
 
 
