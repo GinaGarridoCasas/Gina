@@ -16,7 +16,10 @@ missing_values_count[0:10]
 
     # Calculamos el %
     total_missing/total_cells*100 
+    
+# Calcular el ratio de NaN por columna
 
+na_ratio = ((df.isnull().sum() / len(df))*100).sort_values(ascending = False)
 
 # Tratamiento de missing value
 
