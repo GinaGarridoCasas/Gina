@@ -68,3 +68,11 @@ def remove_all_outliers(df_in, col_name):
         outlier_count = count_outliers(df_in, col_name)
     
     return df_in
+
+# Ubicación de outliers
+ubicación_outliers = (df['col_name'] < minimum) | (df['col_name'] > maximum)
+outliers = df[ubicación_outliers]
+
+# outliers ordenados
+outliers_ordenados = outliers.sort_values['col_name']
+        
