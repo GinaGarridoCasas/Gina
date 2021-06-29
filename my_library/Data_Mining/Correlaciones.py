@@ -23,3 +23,12 @@ Shooting_Accuracy_Goals = df[['Shooting Accuracy','Goals']]
 correlation = Shooting_Accuracy_Goals.corr(method='pearson')
 correlation
 
+
+# Heatmap
+
+f, ax = plt.subplots(figsize=(13, 10))
+sns.heatmap(Base_TICS_Salud_Fisica.corr(),
+           vmin = -1,
+           vmax = 1,
+            annot = True,
+           linewidths = .5)

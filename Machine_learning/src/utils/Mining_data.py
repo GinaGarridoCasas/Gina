@@ -1,3 +1,8 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
 # Función para calcular los porcentajes de missing en cada variable
 
 def Porcentaje_missing_columna (df):
@@ -5,19 +10,37 @@ def Porcentaje_missing_columna (df):
 
     return na_ratio
 
-# Visualización de outliers
-def visualizacion_outliers (df):
-    for i in df:
-        plt.figure(figsize=(15,8))
-        boxplot = TICS_Salud.boxplot(column=['ADSL','cable_fibra optica','otras conexiones','conexion movil_dispositivo_mano','movil_USB'])
-        
-        return boxplot.plot()
  
-    plt.savefig("../reports/Outliers/ENS_2017.jpg", bbox_inches='tight') # para archivar el gráfico como jpg
-  
-  
-  
-  
+# Función para eliminar correlaciones repetidas y las de la diagonal
+
+def get_redundant_pairs(df):
+    '''Get diagonal and lower triangular pairs of correlation matrix'''
+    pairs_to_drop = set()
+    cols = df.columns
+    for i in range(0, df.shape[1]):
+        for j in range(0, i+1):
+            pairs_to_drop.add((cols[i], cols[j]))
+    return pairs_to_drop
+
+# Función para obtener el Top x de correlaciones más altas que queramos
+
+def get_top_abs_correlations(df, n=5):
+    au_corr = df.corr().abs().unstack()
+    labels_to_drop = get_redundant_pairs(df)
+    au_corr = au_corr.drop(labels=labels_to_drop).sort_values(ascending=False)
+    return au_corr[0:n]
+
+# función para visualizar correlaciones. Heatmap
+def heatmap(x):
+    f, ax = plt.subplots(figsize=(13, 10))
+    sns.heatmap(x.corr(),
+           vmin = -1,
+           vmax = 1,
+            annot = True,
+           linewidths = .5)
+    return f, ax
+
+
 # Función para determinar el porcentaje de outlieres en cada columna ???
 
 def get_iqr_values(df_in, col_name):
