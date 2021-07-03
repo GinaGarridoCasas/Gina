@@ -22,3 +22,13 @@ TICS_2017.rename(columns={ TICS_2017.columns[5]: 'conexion movil_dispositivo_man
 # Renombramos algunas categorías de la columna
 
 TICS_2017["index"] = TICS_2017["index"].replace({"Asturias. Principado de":"Asturias, Principado de" , "Balears. Illes":"Balears, Illes", "Madrid. Comunidad de": "Madrid, Comunidad de", "Murcia. Región de":"Murcia, Región de","Navarra. Comunidad Foral de": "Navarra, Comunidad Foral de", "Rioja. La": "Rioja, La"})
+
+
+# Recodificar variables. Categorizar variable numéricas
+
+ENS_2017_C1['Edad_ag'] = ENS_2017_C1['Edad']
+
+ENS_2017_C1.loc[ENS_2017_C1['Edad_ag']<= 40,'Edad_ag'] = 1
+ENS_2017_C1.loc[(ENS_2017_C1['Edad_ag']>40) & (ENS_2017_C1['Edad_ag']<=53),'Edad_ag'] = 2
+ENS_2017_C1.loc[(ENS_2017_C1['Edad_ag']>53) & (ENS_2017_C1['Edad_ag']<=68),'Edad_ag'] = 3
+ENS_2017_C1.loc[ENS_2017_C1['Edad_ag']>68,'Edad_ag'] = 4
