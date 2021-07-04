@@ -6,6 +6,11 @@ TICS_2017.drop(TO_TICS_2017, inplace = True, axis=1)
 # Eliminar columna index del dataset (Concentrarse)
 del Concentrarse['index']
 
+# Seleccionar varias columnas de un dataframe
+
+ENS_2017_C0_R = ENS_2017_C0.loc[:,['Edad','Actividad_economica_actual', 'Estado_civil', 'Freq_ActividadFísica']]
+
+
 # Renombrar columnas
 
 TICS_2017 = TICS_2017.rename(columns = 
