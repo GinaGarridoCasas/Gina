@@ -1,0 +1,98 @@
+link al proyecto en github
+https://github.com/GinaGarridoCasas/Gina/tree/main/jorgina_garrido_cmmlsds_apr
+
+Título: ¿Son más saludables las CCAA con mayor acceso a TICS?
+
+Objetivos del proyecto
+Identificar el mejor modelo de machine learning y deep learning para predecir la salud a partir de determinantes de salud
+
+Hipótesis
+Los modelos de clasificación presentarán mejor precisión en la predicción de la salud a partir de variables categóricas referentes a determinantes de salud
+
+Operativización de variables
+
+Indicadores y fuente
+
+Salud (Encuesta Nacional de Salud. 2017):
+    - Salud percibida
+Prácticas preventivas:
+    - Vacunación de la gripe
+    - Toma de tensión arterial por un profesional sanitario
+    - Medición del nivel de colesterol en sangre
+    - Medición del nivel de azúcar en sangre por un profesional sanitario
+    - ¿Alguna vez le han hecho una pruba de sangre oculta en heces?
+    - ¿Le han realizado alguna vez una colonoscopia?
+
+Determinantes de salud: (Encuesta Nacional de Salud. 2017) 
+    - Características físicas: Peso en Kg y Altura en cm, Índice demasa corporal (IMC)
+    - Actividad física. Frecuencia con la que realiza alguna actividad física en su tiempo libre
+    - Alimentación:
+        - Frecuencia de consumo de fruta fresca (excluyendo zumos)
+        - Frecuencia de consumo de correlaciones
+        - Frecuencia de consumo de huevos
+        - Frecuencia de consumo de pescado
+        - Frecuencia de consumo de pasta, arroz, patatas
+        - Frecuencia de consumo de pan, cereales
+        - Frecuencia de consumo de verduras, ensaladas y hortalizas
+        - Frecuencia de consumo de legumbres
+        - Frecuencia de consumo de embutidos y fiambres
+        - Frecuencia de consumo de productos lácteos (leche, queso, yogur)
+        - Frecuencia de consumo de dulces (galletas, bollería, mermeladas, etc.)
+        - Frecuencia de consumo de refrescos con azúcar
+        - Frecuencia de consumo de comida rápida (pollo frito, bocadillos,pizzas, hamburguesas)
+        - Frecuencia de consumo de aperitivos o comidas saladas de picar
+        - Frecuencia de consumo de zumo natural de frutas o verduras
+        - Frecuencia diaria de consumo de fruta fresca o zumos naturales
+    - Higiene dental: Frecuencia diaria de cepillado de diferentes
+    - Consumo de tabaco: ¿Fuma actualmente?
+    - Consumo de alcohol: Frecuencia de consumo de alcohol en los últimos 12 meses
+    - Apoyo afectivo y personal:
+        - Visitas de amigos y familiares
+        - Ayuda en asuntos relacionados con la Casa
+        - Elogios y reconocimientos al hacer bien el trabajo
+        - Contar con personas que se preocupan de lo que le sucede
+        - Recibir amor y afectivo
+        - Tener la posibilidad de hablar con alguien de sus problemas en el trabajo o en la Casa
+        - Tener la posibilidad de hablar con alguien de sus problemas personales y familiares
+        - Tener la posibilidad de hablar con alguien de sus problemas económicos
+        - Recibir invitaciones para distraerse y salir con otras personas
+        - Recibir consejos útiles cuando le ocurre algún acontecimiento importante en su vida
+        - Recibir ayuda cuando está enfermo en la cama
+
+Variables sociodemográficas (Encuesta Nacional de Salud. 2017):
+    - CCAA
+    - Sexo
+    - Edad
+    - Estado civil
+    - Nacionalidad
+    - Actividad económica
+    - Nivel de estudios
+    - Clase social basada en la ocupación 
+
+Limpieza y control de calidad de la base de datos:
+- Se pasaron las categorías "No sabe", "No contesta" a missing. 
+  En los casos en los que se detectaron missing se aplicó la moda en el caso de las variables categórias y la mediana en las numéricas (Edad, Peso)
+- Se eliminaron las variables que presentaban colinealidad (Altura, consumo de aperitivos y refrescos de azúcar y todas las de apoyo afectivo y personal excepto la de: visitas de amigos y familiares) 
+- Se renombraron las variables
+- No se detectaron filas duplicadas
+- Se encontraron valores outliers en algunas de las variables. 
+  Debidos a la variablidad en las respuestas y en la selección de la muestra seleccionada para que sea representativa de la población por lo que se decidió no eliminarlos
+
+Análisis de datos:
+- Se extrajeron diferentes clúster en función de la VD. Se valoraron los métodos Kmean y Dbscan. 
+- Se aplicó a cada Cluster, 3 modelos de regresión (Lineal regression, polynomial regression y SVR), 3 modelos de clasificación (logistic regression, K_neigbors y SVR), 4 modelos mixtos (DecissionTreeRegressor, DecissionTreeClassifier, RandomForestRegressor y RandomForestClassifier) y redes neuronales (RNN)
+- Una vez detectados los modelos que mejores resultados de predicción presentaban se utilizó el algoritmo de Gridsearch para determinar cual de ellos es mejor al predecir la salud
+- Con el modelo de Voting se valoró si utilizar los modelos con mejores resultados conjuntamente o seleccionar alguno de ellos
+
+
+Conclusiones
+
+- Los mejores modelos de machine learning para predecir los niveles de salud a partir de determinantes de salud son el de Decision Tree Classifier y SVC
+- Las variables con mayor peso detectadas con el modelo de Decission Tree Classifier fueron: Edad_agrupada, actividad económica actual, nivel de estudios, estado Civil, frecuencia de actividad física actual, frecuencia de consumo de carne, frecuencia de consumo de verduras, ensaladas y hortalizas, frecuencia de consumo de alcohol y apoyo afectivo y personal de amigos y familiares
+- Con la aplicación conjunta de ambos modelos (modelo: Voting Hard) se obtiene una precisión en la predicción de 0.99 (accuracy_score) utilizando únicamente las variables de mayor peso detectadas
+
+Futuros análisis de interés
+- Analizar para determinadas enfermedades, los determinantes de salud que más influyen en una mejor salud 
+- Analizar a partir de indicadores específicos de salud para determinadas enfermedades, los determinantes de salud que más inciden en la mejoría
+- Identificar otros determinantes de salud que puedan ser relevantes en el nivel de salud
+
