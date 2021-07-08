@@ -1,7 +1,7 @@
 link al proyecto en github
 https://github.com/GinaGarridoCasas/Gina/tree/main/jorgina_garrido_cmmlsds_apr
 
-Título: ¿Son más saludables las CCAA con mayor acceso a TICS?
+Título: Comparación de modelos de machine learning y deep learning en la predicción de la salud a partir de determinantes de salud
 
 Objetivos del proyecto
 Identificar el mejor modelo de machine learning y deep learning para predecir la salud a partir de determinantes de salud
@@ -89,7 +89,7 @@ Conclusiones
 
 - Los mejores modelos de machine learning para predecir los niveles de salud a partir de determinantes de salud son el de Decision Tree Classifier y SVC
 - Las variables con mayor peso detectadas con el modelo de Decission Tree Classifier fueron: Edad_agrupada, actividad económica actual, nivel de estudios, estado Civil, frecuencia de actividad física actual, frecuencia de consumo de carne, frecuencia de consumo de verduras, ensaladas y hortalizas, frecuencia de consumo de alcohol y apoyo afectivo y personal de amigos y familiares
-- Con la aplicación conjunta de ambos modelos (modelo: Voting Hard) se obtiene una precisión en la predicción de 0.99 (accuracy_score) utilizando únicamente las variables de mayor peso detectadas
+- Con la aplicación conjunta de ambos modelos (modelo: Voting Hard) se obtiene una precisión en la predicción de 0.9487 (accuracy_score) utilizando únicamente las variables de mayor peso detectadas
 
 Futuros análisis de interés
 - Analizar para determinadas enfermedades, los determinantes de salud que más influyen en una mejor salud 
