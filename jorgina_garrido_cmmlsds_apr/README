@@ -88,7 +88,7 @@ Análisis de datos:
 Conclusiones
 
 - Los mejores modelos de machine learning para predecir los niveles de salud a partir de determinantes de salud son el de Decision Tree Classifier y SVC
-- Las variables con mayor peso detectadas con el modelo de Decission Tree Classifier fueron: Edad_agrupada, actividad económica actual, nivel de estudios, estado Civil, frecuencia de actividad física actual, frecuencia de consumo de carne, frecuencia de consumo de verduras, ensaladas y hortalizas, frecuencia de consumo de alcohol y apoyo afectivo y personal de amigos y familiares
+- Las variables con mayor peso detectadas con el modelo de Decission Tree Classifier fueron: Actividad económica actual, Frecuencia de consumo de carne, Nacionalidad, Clase social basada en la ocupación
 - Con la aplicación conjunta de ambos modelos (modelo: Voting Hard) se obtiene una precisión en la predicción de 0.9487 (accuracy_score) utilizando únicamente las variables de mayor peso detectadas
 
 Futuros análisis de interés

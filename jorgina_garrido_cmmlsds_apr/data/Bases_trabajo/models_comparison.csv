@@ -1,0 +1,14 @@
+,Model,Parameters,Recall,Score,MSE
+0,Kmeans,"n_cluster=3,pca=4",None,0.3,None
+1,Dbscan,"eps=19, min_samples=2",None,0.0125,None
+2,LinearRegression,n_job=-1,None,21.48,0.34
+3,PolynomialFeatures,degree=4,None,1.0000,3.419487e-24
+4,SVR,"kernel=rbf, C=100, gamma=0.1, epsilon=.1",None,0.9771,0.0099
+5,LogisticRegression,max_iter= 100,0.6935,0.6935,None
+6,KNeighborsClassifier,n_neighbors=2,0.7856,0.7830,None
+7,SVC,"Kernel = rbf, C = 10, gamma = 1",1.0,1.0,None
+8,DecisionTreeRegressor,max_depth=5,None,0.2548,MAPE: 31.066
+9,RandomForestRegressor,"n_estimators = 2000, max_depth = 5",None,0.2548,30.075
+10,DecisionTreeClassifier,standar,1.0,1.0,None
+11,RandomForestClassifier,"n_etimators = 2000, max_depth = 5",0.6888,0.6888,None
+12,Red neuronal,"Dense_34,10,4(activation_input_shape), compile: adam, sparse_categorical_crossentropy, accuracy",None,0.6951,None

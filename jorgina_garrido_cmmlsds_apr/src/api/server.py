@@ -22,8 +22,8 @@ def home():
 def give_id():
     x = request.args.get('token_id')
     if x == "H13297422":
-        Base_completa_json = read_json("C:\\Users\\ggarr\\OneDrive\\Escritorio\\Data_Science\\The Bridge\\Gina\\TICS_SALUD_EDA\\src\\api\\static\\Base_completa.json")
-        return str(Base_completa_json)
+        ENS_201_agr_json = read_json("Gina\\jorgina_garrido_cmmlsds_apr\\data\\Bases_trabajo\\ENS_2017_C_agr.json")
+        return str(ENS_201_agr_json)
     else:
         return "No es la contraseña correcta"
 
