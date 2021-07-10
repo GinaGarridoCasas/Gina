@@ -14,7 +14,7 @@ data['streamlit_port'] = ''
 data['python_libraries_used'] = 'pandas, numpys, matplotlib, seaborn, sklearn, tensorflow, keras' 
 
 
-dir = 'C:\Users\ggarr\OneDrive\Escritorio\Data_Science\The Bridge\Gina\jorgina_garrido_cmmlsds_apr\documentation' 
+dir = 'jorgina_garrido_cmmlsds_apr\info_json.py'
 file_name = "info.json"
 
 with open(dir, 'w+') as outfile:
