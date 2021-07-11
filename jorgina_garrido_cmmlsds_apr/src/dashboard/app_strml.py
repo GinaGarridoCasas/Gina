@@ -28,19 +28,14 @@ if menu == 'Título':
 # Damos un texto a la pestaña del menú: Abstract
     
 if menu == 'Abstract':
-    st.write('Abstract: 
-    Objetivo: Identificar el mejor modelo de machine learning o deep learning para predecir la salud a partir de determinantes de salud, 
-    Fuente de datos: Encuesta Nacional de salud (2017),
-    Variables utilizadas: VD: salud percibida, VI: Prácticas preventivas, Características físicas, Actividad física, Alimentación, Higiene dental, Consumo de tabaco, Consumo de alcohol, Apoyo afectivo y personal, sociodemográficas
-    Modelos de Machine learning y deep learning utilizados: Lineal regression, polynomial regression y SVR, logistic regression, K_neigbors y SVR, DecissionTreeRegressor, DecissionTreeClassifier, RandomForestRegressor y RandomForestClassifier, RNN
-    Conclusiones: Los modelos con mejores resultados fueron: SVC y DecissionTreeClassifier, Las variables con mayor peso en la predicción: Edad_agrupada, actividad económica actual, nivel de estudios, estado Civil, frecuencia de actividad física actual, frecuencia de consumo de carne, frecuencia de consumo de verduras, ensaladas y hortalizas, 
-    frecuencia de consumo de alcohol y apoyo afectivo y personal de amigos y familiares
-    Con la aplicación conjunta de ambos modelos (modelo: Voting Hard) se obtiene una precisión en la predicción de 0.9487 (accuracy_score) utilizando únicamente las variables de mayor peso detectadas')
-
-# Indicamos en la pestaña de Base de datos que ha de mostrar el data frame de nuestro base de datos
-if menu == 'Base de datos':
-    BBDD = pd.read_csv(bbdd_path)
-    st.table(BBDD) 
+    st.write('Abstract:' 
+    'Objetivo: Identificar el mejor modelo de machine learning o deep learning para predecir la salud a partir de determinantes de salud,' 
+    'Fuente de datos: Encuesta Nacional de salud (2017),'
+    'Variables utilizadas: VD: salud percibida, VI: Prácticas preventivas, Características físicas, Actividad física, Alimentación, Higiene dental, Consumo de tabaco, Consumo de alcohol, Apoyo afectivo y personal, sociodemográficas'
+    'Modelos de Machine learning y deep learning utilizados: Lineal regression, polynomial regression y SVR, logistic regression, K_neigbors y SVR, DecissionTreeRegressor, DecissionTreeClassifier, RandomForestRegressor y RandomForestClassifier, RNN'
+    'Conclusiones: Los modelos con mejores resultados fueron: SVC y DecissionTreeClassifier, Las variables con mayor peso en la predicción: Edad_agrupada, actividad económica actual, nivel de estudios, estado Civil, frecuencia de actividad física actual, frecuencia de consumo de carne, frecuencia de consumo de verduras, ensaladas y hortalizas,' 
+    'frecuencia de consumo de alcohol y apoyo afectivo y personal de amigos y familiares'
+    'Con la aplicación conjunta de ambos modelos (modelo: Voting Hard) se obtiene una precisión en la predicción de 0.9487 (accuracy_score) utilizando únicamente las variables de mayor peso detectadas.')
 
 # Indicamos en la pestaña de Base de datos que ha de mostrar el data frame de nuestro base de datos
 if menu == 'Base de datos':
